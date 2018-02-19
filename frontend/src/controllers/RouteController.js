@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Switch, Route} from 'react-router-dom';
-import UtilityDataFullPage from '../Containers/UtilityDataFullPage'
-import AdminPage from "../Containers/AdminPage";
+import UtilityDataFullPage from '../containers/UtilityDataFullPage'
+import AdminPage from "../containers/AdminPage";
 
 class RouteController extends Component {
     render() {

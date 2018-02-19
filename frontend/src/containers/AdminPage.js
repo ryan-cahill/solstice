@@ -70,9 +70,17 @@ class AdminPage extends Component {
         });
 
         updateUtilityDetailsByUuid(billingItemUuid, this.state.newUtilityData).then(() => {
-            this.props.history.push({
-                pathname: '/'
-            });
+            this.navigateHome();
+        });
+    }
+
+    cancelChanges(e) {
+        this.navigateHome();
+    }
+
+    navigateHome() {
+        this.props.history.push({
+            pathname: '/'
         });
     }
 
@@ -97,7 +105,8 @@ class AdminPage extends Component {
                             <Input label='kwh' onChange={(e) => this.textFieldChanged('kwh', e.target.value)} placeholder={this.state.utilityData.kwh.toString()}/>
                         </FormControl>
                         <div style={{paddingTop: 16}}>
-                            <Button variant='raised' color='primary' onClick={(e) => this.submitChanges(e)}>submit</Button>
+                            <Button variant='raised' style={{marginRight: 16}} onClick={(e) => this.cancelChanges(e)}>cancel</Button>
+                            <Button variant='raised' color='primary' style={{marginLeft: 16}} onClick={(e) => this.submitChanges(e)}>submit</Button>
                         </div>
                     </Paper>
                 </MuiThemeProvider>

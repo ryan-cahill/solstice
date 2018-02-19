@@ -3,7 +3,7 @@ const restify = require('restify'),
     server = restify.createServer({
         name: 'solstice'
     }),
-    port = 3001,
+    port = 5001,
     CORS = corsMiddleware({
         origins: ['*'],
         allowHeaders: ['*']

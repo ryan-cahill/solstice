@@ -63,11 +63,13 @@ class UtilityDataFullPage extends Component {
                         </List>
                     </Paper>
                 </div>
-                <div style={{paddingTop: 16}}>
-                    <BarChartPanel chartData={this.formatUtilityDataForChart(['bill', 'savings'])}/>
-                </div>
-                <div style={{paddingTop: 16}}>
-                    <LineChartPanel chartData={this.formatUtilityDataForChart(['kwh'])}/>
+                <div>
+                    <div style={{paddingTop: 16, float: 'left', width: '49%'}}>
+                        <BarChartPanel chartData={this.formatUtilityDataForChart(['bill', 'savings'])}/>
+                    </div>
+                    <div style={{paddingTop: 16, float: 'right', width: '49%'}}>
+                        <LineChartPanel chartData={this.formatUtilityDataForChart(['kwh'])}/>
+                    </div>
                 </div>
             </div>
         )
