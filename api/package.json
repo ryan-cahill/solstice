@@ -1,0 +1,16 @@
+{
+  "name": "solstice-api",
+  "version": "1.0.0",
+  "description": "api for solstice demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ryan-cahill",
+  "license": "MIT",
+  "dependencies": {
+    "restify": "^6.3.4",
+    "restify-cors-middleware": "^1.1.0",
+    "uuid": "^3.2.1"
+  }
+}
