@@ -125,3 +125,10 @@ _Parameters_
 _Example Successful Response Value_
 
 Returns `204`, no content.
+
+### Resources
+[Material-UI](https://material-ui-next.com/)
+
+[Restify](http://restify.com/docs/server-api/)
+
+[Recharts](http://recharts.org/#/en-US/api)
