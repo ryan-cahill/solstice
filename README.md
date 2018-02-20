@@ -123,4 +123,5 @@ _Parameters_
 |updatedDataUuid |uid |yes     |URL     |
 
 _Example Successful Response Value_
+
 Returns `204`, no content.
