@@ -30,9 +30,11 @@ docker run -d -t -p 5001:5001 solstice-api
 ### API
 #### /utilityData
 _Methods Allowed_
+
 `GET`
 
 _Example Successful Response Value_
+
 ```json
 {
     "body": {
@@ -84,9 +86,11 @@ _Example Successful Response Value_
 
 #### /utilityData/<billingItemUuid>
 _Methods Allowed_
+
 `GET`
 
 _Parameters_
+
 |Name            |Type|Required|Location|
 |----------------|----|--------|--------|
 |billingItemUuid |uid |yes     |URL     |
@@ -109,9 +113,11 @@ _Example Successful Response Value_
 
 #### /updateUtilityData/<updatedDataUuid>
 _Methods Allowed_
+
 `PUT`
 
 _Parameters_
+
 |Name            |Type|Required|Location|
 |----------------|----|--------|--------|
 |updatedDataUuid |uid |yes     |URL     |
