@@ -84,7 +84,7 @@ _Example Successful Response Value_
 }
 ```
 
-#### /utilityData/<billingItemUuid>
+#### /utilityData/\<billingItemUuid\>
 _Methods Allowed_
 
 `GET`
@@ -111,7 +111,7 @@ _Example Successful Response Value_
 }
 ```
 
-#### /updateUtilityData/<updatedDataUuid>
+#### /updateUtilityData/\<updatedDataUuid\>
 _Methods Allowed_
 
 `PUT`
