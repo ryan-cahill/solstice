@@ -14,15 +14,15 @@ const theme = createMuiTheme({
             light: '#FF9800',
             main: '#F57C00',
             dark: '#E65100',
-            contrastText: '#fff',
+            contrastText: '#fff'
         },
         secondary: {
             light: '#2196F3',
             main: '#1976D2',
             dark: '#0D47A1',
-            contrastText: '#000',
-        },
-    },
+            contrastText: '#000'
+        }
+    }
 });
 
 class AdminPage extends Component {
@@ -36,7 +36,8 @@ class AdminPage extends Component {
             bill: '',
             savings: '',
             kwh: ''
-        }
+        },
+        dataIsValid: true
     };
 
     componentDidMount() {
@@ -56,11 +57,28 @@ class AdminPage extends Component {
         });
     }
 
+    newDataIsValid() {
+        let dataIsValid = true;
+        Object.keys(this.state.newUtilityData).forEach(key => {
+            const value = this.state.newUtilityData[key],
+                valueParsed = parseFloat(value);
+            if (isNaN(valueParsed) && value.length > 0) {
+                dataIsValid = false;
+            }
+        });
+        return dataIsValid;
+    }
+
     submitChanges(e) {
         const billingItemUuid = this.props.location.state.billingItemUuid;
+        if (!this.newDataIsValid()) {
+            this.setState({
+                dataIsValid: false
+            });
+            return;
+        }
         Object.keys(this.state.newUtilityData).forEach(key => {
             const valueParsed = parseFloat(this.state.newUtilityData[key]);
-
             this.setState({
                 newUtilityData: {
                     ...this.state.newUtilityData,
@@ -88,7 +106,7 @@ class AdminPage extends Component {
         return (
             <div style={{paddingTop: 16}}>
                 <MuiThemeProvider theme={theme}>
-                    <Paper elevation={4} style={{paddingTop: 16, paddingBottom: 16, width: '100%'}}>
+                    <Paper elevation={4} style={{paddingTop: 16, paddingBottom: 32, width: '100%'}}>
                         <Typography variant="headline" component="h3">
                             {`Edit customer data  for billing period ` + this.state.utilityData.month + '/' + this.state.utilityData.year}
                         </Typography>
@@ -107,6 +125,11 @@ class AdminPage extends Component {
                         <div style={{paddingTop: 16}}>
                             <Button variant='raised' style={{marginRight: 16}} onClick={(e) => this.cancelChanges(e)}>cancel</Button>
                             <Button variant='raised' color='primary' style={{marginLeft: 16}} onClick={(e) => this.submitChanges(e)}>submit</Button>
+                        </div>
+                        <div style={{float: 'right'}}>
+                            <Typography color='primary' style={{paddingRight: '16px'}}>
+                                {this.state.dataIsValid ? '' : 'Please enter valid data.'}
+                            </Typography>
                         </div>
                     </Paper>
                 </MuiThemeProvider>
